@@ -1,24 +1,39 @@
 html {
     font-size: 15px;
+    font-family: 'Overpass', sans-serif;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    
+
 }
 
 body {
+    display: grid;
     background-color: hsl(216,12%,8%);
+    margin: 0px;
+    min-height: 100%;
+    width: auto;
+    overflow: hidden;
+    justify-content: center;
+    vertical-align: middle;
 }
 
-.mainContainer {
+/*INITIAL DISPLY - BEFORE SELECTION*/
+
+.mainContainerBefore {
     position:relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    transform: translate(50%,50%);
     height: 400px;
     width: 400px;
     background-color: hsl(213, 19%, 18%);
     border-radius: 15px;
+
 }
 
-.mainContainer img {
+.mainContainerBefore img {
     position: relative;
     width: 20px;
     height: 20px;
@@ -28,46 +43,115 @@ body {
     background-color: hsl(214, 11%, 24%);
 }
 
-.mainContainer h1 {
+.mainContainerBefore h1 {
     color: white;
     width: 80%;
     margin: 10px auto;
     text-align: left;
 }
 
-.mainContainer p {
+.mainContainerBefore p {
     color: hsl(217, 12%, 63%);
     width: 80%;
     margin: 10px auto;
     text-align: left;
 }
 
+/* DISPLAY AFTER SELECTION */
+
+.mainContainerAfter {
+    position:relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    width: 400px;
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 15px;
+}
+
+.mainContainerAfter div {
+    display: flex;
+    align-self: center;
+}
+
+.mainContainerAfter img {
+    width:auto;
+    margin: 25px 0;
+}
+
+.mainContainerAfter #selectedNumberConfirmation {
+    padding: 4px 15px 0px 15px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(214, 11%, 24%);
+    border-radius: 20px;
+}
+
+.mainContainerAfter h1 {
+    color: white;
+    width: fit-content;
+    margin-top: 25px;
+    vertical-align: middle;
+}
+
+.mainContainerAfter p {
+
+    color: hsl(217, 12%, 63%);
+    width: 80%;
+    text-align: center;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+    vertical-align: middle;
+    margin: 0 auto 20px  auto;
+}
+
+/* NUMBER CONTAINER */
+
 .numberContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-self: center;
+    width: 80%;
+
 }
 
 .numberContainer div {
     display: inline-flex;
-    color: white;
+    color: hsl(217, 12%, 63%);
     background-color: hsl(214, 11%, 24%);
     border-radius: 200px;
     width: 20px;
     height: 20px;
-    padding: 10px;
-    margin: 10px;
+    line-height: 20px;
+    padding: 12px 10px 8px 10px;
+    margin: 10px 0 0 0;
     justify-content: center;
     vertical-align: middle;
 }
 
+.numberContainer div:hover {
+    background-color: hsl(217, 12%, 63%);
+    color: white;
+}
+
 #submit {
     position: relative;
-    width: 50%;
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
     background-color: hsl(25, 97%, 53%);
     color: white;
-    padding: 8px;
+    padding: 11px 0 7px 0;
     text-align: center;
-    border-radius: 16px;
-    margin: 10px auto;
+    border-radius: 30px;
+    margin: 25px auto;
 
+}
+
+#submit:hover {
+    color: hsl(25, 97%, 53%);
+    background-color: white;
 }
